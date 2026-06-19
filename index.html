@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── SEO BÁSICO ─────────────────────────── -->
+  <title>Ricardo Rodriguez | Técnico IT & Desarrollador Web — Sitges</title>
+  <meta name="description"
+    content="Portfolio de Ricardo Rodriguez, Técnico Informático y Desarrollador Web Jr. en Sitges, Barcelona. Soporte IT, reparación de hardware, HTML, CSS, JavaScript y Linux. Disponible para prácticas o trabajo en Barcelona o remoto.">
+  <meta name="keywords"
+    content="técnico informático Sitges, desarrollador web Barcelona, soporte IT, reparación ordenadores Sitges, HTML CSS JavaScript, Linux, portfolio web, Ricardo Rodriguez, open to work, FP desarrollo web">
+  <meta name="author" content="Ricardo Rodriguez">
+  <meta name="copyright" content="© 2026 Ricardo Rodriguez. Todos los derechos reservados.">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="es">
+  <meta name="theme-color" content="#09090b">
+  <meta name="rating" content="general">
+
+  <!-- ── GEOLOCALIZACIÓN ───────────────────── -->
+  <meta name="geo.region" content="ES-CT">
+  <meta name="geo.placename" content="Sitges, Barcelona, Cataluña, España">
+  <meta name="geo.position" content="41.2244;1.8056">
+  <meta name="ICBM" content="41.2244, 1.8056">
+
+  <!-- ── OPEN GRAPH (Facebook / LinkedIn) ─── -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ricardordrgz.github.io/portfolio/">
+  <meta property="og:title" content="Ricardo Rodriguez | Técnico IT & Desarrollador Web — Sitges">
+  <meta property="og:description"
+    content="Técnico Informático y Desarrollador Web Jr. en Sitges, Barcelona. Soporte IT, hardware, HTML, CSS, JavaScript y Linux. Disponible para trabajar.">
+  <meta property="og:image" content="https://ricardordrgz.github.io/portfolio/assets/profile.png">
+  <meta property="og:image:width" content="440">
+  <meta property="og:image:height" content="440">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="Ricardo Rodriguez — Portfolio">
+
+  <!-- ── TWITTER CARD ──────────────────────── -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ricardo Rodriguez | Técnico IT & Desarrollador Web — Sitges">
+  <meta name="twitter:description"
+    content="Técnico Informático y Desarrollador Web Jr. en Sitges, Barcelona. Disponible para prácticas o trabajo.">
+  <meta name="twitter:image" content="https://ricardordrgz.github.io/portfolio/assets/profile.png">
+
+  <!-- ── CANONICAL ─────────────────────────── -->
+  <link rel="canonical" href="https://ricardordrgz.github.io/portfolio/">
+
+  <!-- ── SCHEMA.ORG (datos estructurados) ─── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ricardo Rodriguez",
+    "jobTitle": "Técnico Informático y Desarrollador Web Jr.",
+    "url": "https://ricardordrgz.github.io/portfolio/",
+    "image": "https://ricardordrgz.github.io/portfolio/assets/profile.png",
+    "email": "christianrodriguezarias@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Sitges",
+      "addressRegion": "Barcelona",
+      "addressCountry": "ES"
+    },
+    "sameAs": [
+      "https://github.com/RicardoRdrgz",
+      "https://linkedin.com/in/ricardorr"
+    ],
+    "knowsAbout": ["HTML5", "CSS3", "JavaScript", "Linux", "Soporte IT", "Hardware", "Redes"]
+  }
+  </script>
+
+  <!-- ── FUENTES ────────────────────────────── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+  <link rel="stylesheet" href="css/styles.min.css">
+  <link rel="icon" type="image/svg+xml" href="assets/iconos/favicon.svg">
+
+  <style>
+    .m-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0, 0, 0, .85);
+      backdrop-filter: blur(6px);
+      align-items: center;
+      justify-content: center;
+      padding: 20px
+    }
+
+    .m-overlay.open {
+      display: flex
+    }
+
+    .m-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-accent);
+      border-radius: 16px;
+      width: min(600px, 100%);
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      animation: mIn .2s ease
+    }
+
+    @keyframes mIn {
+      from {
+        opacity: 0;
+        transform: translateY(-16px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    .m-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--bg-surface-hover);
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+      font-size: .85rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .2s
+    }
+
+    .m-close:hover {
+      background: var(--accent-dim);
+      border-color: var(--border-accent);
+      color: var(--accent)
+    }
+
+    .m-inner {
+      padding: 36px;
+      overflow-y: auto
+    }
+
+    .m-inner::-webkit-scrollbar {
+      width: 4px
+    }
+
+    .m-inner::-webkit-scrollbar-thumb {
+      background: var(--bg-surface-hover);
+      border-radius: 2px
+    }
+
+    .m-label {
+      font-size: .63rem;
+      letter-spacing: 2px;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 6px
+    }
+
+    .m-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 4px;
+      padding-right: 32px
+    }
+
+    .m-date {
+      font-size: .67rem;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      display: block;
+      padding-bottom: 16px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--border)
+    }
+
+    .m-section {
+      display: block;
+      font-size: .67rem;
+      letter-spacing: 1.5px;
+      color: var(--accent);
+      margin: 18px 0 5px
+    }
+
+    .m-inner p {
+      font-size: .81rem;
+      color: var(--text-muted);
+      line-height: 1.85;
+      margin-bottom: 4px
+    }
+
+    .m-inner a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px
+    }
+
+    .m-inner strong {
+      color: var(--text-dim)
+    }
+
+    .m-foot {
+      padding: 16px 36px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: flex-end;
+      flex-shrink: 0
+    }
+
+    .m-btn {
+      padding: 7px 20px;
+      background: var(--accent-dim);
+      border: 1px solid var(--border-accent);
+      border-radius: 8px;
+      color: var(--accent);
+      font-size: .73rem;
+      letter-spacing: 1px;
+      cursor: pointer;
+      font-family: 'Fira Code', monospace;
+      transition: all .2s
+    }
+
+    .m-btn:hover {
+      background: rgba(255, 94, 0, .22)
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#">
+      <div class="logo">R_Rodriguez</div>
+    </a>
+    <div class="nav-links">
+      <a href="#about" class="active">/about</a>
+      <a href="#formacion">/formacion</a>
+      <a href="#tools">/tools</a>
+      <a href="#projects">/projects</a>
+      <a href="#media">/media</a>
+      <a href="#contact">/contact</a>
+    </div>
+    <div class="nav-status">
+      <span class="status-dot"></span>
+      <span>ONLINE</span>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <div class="container">
+
+    <!-- HERO -->
+    <section class="hero reveal" id="hero">
+      <div class="hero-text">
+        <h1>Hola, soy <span>Ricardo</span></h1>
+        <h3>Técnico Informático & Desarrollador Web Jr.</h3>
+        <p>Resuelvo problemas de hardware y construyo soluciones digitales. De la incidencia al código — cada problema
+          tiene solución si sabes dónde mirar.</p>
+        <div class="hero-badges">
+          <span class="badge">SOPORTE IT</span>
+          <span class="badge">WEB DEV</span>
+          <span class="badge">LINUX</span>
+          <span class="badge">OPEN TO WORK</span>
+        </div>
+
+        <div class="xp-section">
+          <div class="xp-row">
+            <span class="xp-label">SOPORTE IT</span>
+            <div class="xp-track">
+              <div class="xp-fill" style="width:92%"></div>
+            </div>
+            <span class="xp-val">92%</span>
+          </div>
+          <div class="xp-row">
+            <span class="xp-label">HTML / CSS</span>
+            <div class="xp-track">
+              <div class="xp-fill" style="width:85%"></div>
+            </div>
+            <span class="xp-val">85%</span>
+          </div>
+          <div class="xp-row">
+            <span class="xp-label">JAVASCRIPT</span>
+            <div class="xp-track">
+              <div class="xp-fill" style="width:70%"></div>
+            </div>
+            <span class="xp-val">70%</span>
+          </div>
+          <div class="xp-row">
+            <span class="xp-label">LINUX</span>
+            <div class="xp-track">
+              <div class="xp-fill" style="width:78%"></div>
+            </div>
+            <span class="xp-val">78%</span>
+          </div>
+          <div class="xp-row">
+            <span class="xp-label">VIDEO EDITING</span>
+            <div class="xp-track">
+              <div class="xp-fill" style="width:91%"></div>
+            </div>
+            <span class="xp-val">91%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-img-wrap">
+        <div class="hero-ring"></div>
+        <img src="assets/profile.png" alt="Ricardo Rodriguez" class="hero-img">
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ABOUT -->
+    <section id="about" class="reveal">
+      <h2 class="section-title">whoami</h2>
+      <div class="terminal-wrap">
+        <div class="term-header">
+          <div class="tdot dot-r"></div>
+          <div class="tdot dot-y"></div>
+          <div class="tdot dot-g"></div>
+          <span>guest@ricardo-sys:~</span>
+        </div>
+        <div class="term-body">
+          <div><span class="prompt">guest@sys:~$</span> <span class="cmd">cat bio.txt</span></div>
+          <div class="out">
+            <p>Mi primer contacto con la informática fue un Spectrum +128, seguido de un Windows 98 que logré
+              actualizar a XP. Pronto vi que en este mundillo no existen los callejones sin salida: casi cualquier
+              problema se resuelve si sabes dónde buscar. Con esa mentalidad empecé en el soporte técnico y el
+              hardware, ayudando a empresas y usuarios a recuperar la normalidad cuando los sistemas decidían
+              complicarles el día.</p>
+            <p>Hoy compagino ese trabajo con el desarrollo web a través de una FP en Creación y Publicación de
+              Páginas Web (HTML, CSS, JavaScript), lanzando mis propios proyectos para poner en práctica el código.
+              Soy un "computero" inquieto por naturaleza: en mi tiempo libre me verás resolviendo laboratorios de
+              ciberseguridad en TryHackMe, editando vídeo para YouTube o modificando el hardware de mis consolas.</p>
+            <p>Para mí, el software y los componentes físicos son las dos caras de la misma moneda. Disfruto tanto
+              desarmando un equipo en el taller para localizar un fallo eléctrico como picando código frente a la
+              pantalla para dar vida a una web funcional. Al final, se trata de lo mismo: entender cómo funcionan
+              las cosas por dentro y hacer que vayan mejor.</p>
+          </div>
+
+          <div><span class="prompt">guest@sys:~$</span> <span class="cmd">./load_stats.sh</span></div>
+          <div class="out">
+            <div class="tbar"><span class="tbar-name">Hardware/IT</span><span class="tbar-fill">█████████░</span> <span
+                class="tbar-level">Lvl 9</span></div>
+            <div class="tbar"><span class="tbar-name">Web Dev</span> <span class="tbar-fill">████████░░</span> <span
+                class="tbar-level">Lvl 8</span></div>
+            <div class="tbar"><span class="tbar-name">Linux/Win</span> <span class="tbar-fill">███████░░░</span> <span
+                class="tbar-level">Lvl 7</span></div>
+            <div class="tbar"><span class="tbar-name">Resolución</span> <span class="tbar-fill">██████████</span> <span
+                class="tbar-level">MAX</span></div>
+          </div>
+
+          <div><span class="prompt">guest@sys:~$</span> <span class="cmd">cat formacion.txt</span></div>
+          <div class="out">
+            [✓] FP — Creación y Publicación de Páginas Web &nbsp;<span style="color:var(--accent)">// en
+              curso</span><br>
+            [✓] Soporte Técnico &amp; Hardware
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color:#4ade80">// activo</span><br>
+            [✓] TryHackMe — Jr Pentester Path
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#4ade80">//
+              completado</span>
+          </div>
+
+          <div><span class="prompt">guest@sys:~$</span> <span class="cmd" id="terminal-text">_</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- FORMACIÓN / TIMELINE -->
+    <section id="formacion" class="reveal">
+      <h2 class="section-title">formacion_&amp;_exp</h2>
+      <div class="timeline">
+
+        <div class="tl-item">
+          <div class="tl-date"> ACTUALIDAD</div>
+          <div class="tl-title">
+            FP — Creación y Publicación de Páginas Web
+            <span class="tl-status tl-ongoing">EN CURSO</span>
+          </div>
+          <p class="tl-desc">Formación Profesional centrada en HTML5, CSS3, JavaScript y despliegue web. Proyecto final:
+            página de servicios técnicos desarrollada desde cero.</p>
+          <div class="tl-tags">
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Git</span>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-date">2021 — ACTUALIDAD</div>
+          <div class="tl-title">
+            Técnico Informático — Soporte &amp; Hardware
+            <span class="tl-status tl-ongoing">ACTIVO</span>
+          </div>
+          <p class="tl-desc">Resolución de incidencias hardware/software, reparación de equipos y atención directa a
+            clientes. Diagnóstico en entornos Windows y Linux.</p>
+          <div class="tl-tags">
+            <span class="tag">Windows</span>
+            <span class="tag">Linux</span>
+            <span class="tag">Hardware</span>
+            <span class="tag">Redes</span>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-date">2026</div>
+          <div class="tl-title">
+            TryHackMe — Jr Pentester Path
+            <span class="tl-status tl-done">COMPLETADO</span>
+          </div>
+          <p class="tl-desc">Path de ciberseguridad ofensiva: reconocimiento, explotación y escalada de privilegios.
+            Introducción al mundo Red Team.</p>
+          <div class="tl-tags">
+            <span class="tag">Nmap</span>
+            <span class="tag">Metasploit</span>
+            <span class="tag">Linux</span>
+            <span class="tag">CTF</span>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-date">2006 — 2022</div>
+          <div class="tl-title">
+            Edición de Vídeo — Proyectos Creativos
+            <span class="tl-status tl-done">COMPLETADO</span>
+          </div>
+          <p class="tl-desc">Proyectos de edición con DaVinci Resolve, Adobe Premier o Sony Vegas. Videoblogs, montajes,
+            gameplays.</p>
+          <div class="tl-tags">
+            <span class="tag">DaVinci Resolve</span>
+            <span class="tag">Adobe Premier</span>
+            <span class="tag">Sony Vegas</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- HERRAMIENTAS -->
+    <section id="tools" class="reveal">
+      <h2 class="section-title">tools_&amp;_stack</h2>
+      <div class="tools-grid">
+
+        <div class="tool-card">
+          <img class="tool-icon-img" src="assets/iconos/html.png" alt="HTML5" data-fallback="HTML5"
+            onerror="this.style.opacity='.35'">
+          <div class="tool-info">
+            <div class="tool-name">HTML5</div>
+            <div class="tool-cat">Markup / Estructura</div>
+            <span class="tool-tag">WEB</span>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <img class="tool-icon-img" src="assets/iconos/css.png" alt="CSS3" data-fallback="CSS3"
+            onerror="this.style.opacity='.35'">
+          <div class="tool-info">
+            <div class="tool-name">CSS3</div>
+            <div class="tool-cat">Estilos / Layouts</div>
+            <span class="tool-tag">WEB</span>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <img class="tool-icon-img" src="assets/iconos/javascript.png" alt="JavaScript" data-fallback="JS"
+            onerror="this.style.opacity='.35'">
+          <div class="tool-info">
+            <div class="tool-name">JavaScript</div>
+            <div class="tool-cat">Interactividad / DOM</div>
+            <span class="tool-tag">WEB</span>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <img class="tool-icon-img" src="assets/iconos/vscode.png" alt="VS Code" data-fallback="VSC"
+            onerror="this.style.opacity='.35'">
+          <div class="tool-info">
+            <div class="tool-name">VS Code</div>
+            <div class="tool-cat">Editor principal</div>
+            <span class="tool-tag">DEV</span>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <img class="tool-icon-img" src="assets/iconos/github.png" alt="Git" data-fallback="GIT"
+            onerror="this.style.opacity='.35'">
+          <div class="tool-info">
+            <div class="tool-name">Git / GitHub</div>
+            <div class="tool-cat">Control de versiones</div>
+            <span class="tool-tag">DEV</span>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <img class="tool-icon-img" src="assets/iconos/linux.png" alt="Linux" data-fallback="LNX"
+            onerror="this.style.opacity='.35'">
+          <div class="tool-info">
+            <div class="tool-name">Linux</div>
+            <div class="tool-cat">OS / CLI / Admin</div>
+            <span class="tool-tag">SYSADMIN</span>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <img class="tool-icon-img" src="assets/iconos/windows.png" alt="Windows" data-fallback="WIN"
+            onerror="this.style.opacity='.35'">
+          <div class="tool-info">
+            <div class="tool-name">Windows</div>
+            <div class="tool-cat">Soporte / Reparación</div>
+            <span class="tool-tag">SYSADMIN</span>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <img class="tool-icon-img" src="assets/iconos/hardware2.png" alt="Hardware IT" data-fallback="HW"
+            onerror="this.style.opacity='.35'">
+          <div class="tool-info">
+            <div class="tool-name">Hardware IT</div>
+            <div class="tool-cat">Diagnóstico / Reparación</div>
+            <span class="tool-tag">IT</span>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <img class="tool-icon-img" src="assets/iconos/redes.png" alt="Redes" data-fallback="NET"
+            onerror="this.style.opacity='.35'">
+          <div class="tool-info">
+            <div class="tool-name">Redes</div>
+            <div class="tool-cat">TCP/IP / Diagnóstico</div>
+            <span class="tool-tag">IT</span>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <img class="tool-icon-img" src="assets/iconos/davinci.png" alt="DaVinci Resolve" data-fallback="DV"
+            onerror="this.style.opacity='.35'">
+          <div class="tool-info">
+            <div class="tool-name">DaVinci Resolve</div>
+            <div class="tool-cat">Edición de vídeo</div>
+            <span class="tool-tag">CREATIVE</span>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <img class="tool-icon-img" src="assets/iconos/aftereffects.png" alt="After Effects" data-fallback="AE"
+            onerror="this.style.opacity='.35'">
+          <div class="tool-info">
+            <div class="tool-name">After Effects</div>
+            <div class="tool-cat">Motion Graphics</div>
+            <span class="tool-tag">CREATIVE</span>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <img class="tool-icon-img" src="assets/iconos/devtool.png" alt="DevTools" data-fallback="DEV"
+            onerror="this.style.opacity='.35'">
+          <div class="tool-info">
+            <div class="tool-name">DevTools</div>
+            <div class="tool-cat">Debug / Inspección</div>
+            <span class="tool-tag">WEB</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- PROYECTOS / INVENTORY -->
+    <section id="projects" class="reveal">
+      <h2 class="section-title">item_inventory</h2>
+      <div class="inv-grid">
+
+        <!-- Card 1: THM Certificate (no link, download button) -->
+        <div class="inv-card inv-card--cert">
+          <div class="inv-rarity r-rare">◆ RARE</div>
+          <img class="inv-icon-img" src="assets/iconos/inv-thm.svg" alt="TryHackMe" onerror="this.style.opacity='.35'">
+          <h4>THM: PRE SECURITY PATH</h4>
+          <p>Certificación TryHackMe completada el 22 Feb 2026. Path de fundamentos: redes, Linux, seguridad web y
+            criptografía.</p>
+          <div class="tag-row">
+            <span class="tag">Redes</span>
+            <span class="tag">Linux</span>
+            <span class="tag">Web Security</span>
+          </div>
+          <a class="inv-dl-btn" href="THM-5SVOIBNJXM.pdf" download="THM-PreSecurity-CRodriguez.pdf"
+            title="Descargar certificado PDF">
+            <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:middle;">download</span>
+            Descargar cert
+          </a>
+        </div>
+
+        <!-- Card 2: Web de Servicios (clickable → GitHub or live URL) -->
+        <a class="inv-card" href="https://github.com/RicardoRdrgz" target="_blank" rel="noopener">
+          <div class="inv-rarity r-epic">◆ EPIC</div>
+          <img class="inv-icon-img" src="assets/iconos/inv-web.svg" alt="Web de Servicios"
+            onerror="this.style.opacity='.35'">
+          <h4>WEB DE SERVICIOS TÉCNICOS</h4>
+          <p>Página web propia para ofrecer servicios técnicos. Desarrollada durante la FP con HTML, CSS y JS vanilla.
+          </p>
+          <div class="tag-row">
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">JavaScript</span>
+          </div>
+          <span class="inv-link-hint">↗ ver en GitHub</span>
+        </a>
+
+        <!-- Card 3: Linux Automation (clickable → GitHub) -->
+        <a class="inv-card" href="https://github.com/RicardoRdrgz" target="_blank" rel="noopener">
+          <div class="inv-rarity r-uncommon">◆ UNCOMMON</div>
+          <img class="inv-icon-img" src="assets/iconos/ai.png" alt="Curso de inteligencia Artificial"
+            onerror="this.style.opacity='.35'">
+          <h4>PRÓXIMAMENTE CURSO IA</h4>
+          <p>Curso de instalación e iniciación a la Inteligencia Artificial en distribuciones linux.
+          </p>
+          <div class="tag-row">
+            <span class="tag">IA</span>
+            <span class="tag">Agentic Development</span>
+            <span class="tag">Linux</span>
+          </div>
+          <span class="inv-link-hint">↗ ver en GitHub</span>
+        </a>
+
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- VÍDEOS -->
+    <section id="media" class="reveal">
+      <h2 class="section-title">log_multimedia</h2>
+      <div class="video-grid">
+
+        <div class="video-wrap">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/aK0pp8r5dnE" allowfullscreen
+              referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+          <div class="video-meta">
+            <h3>CAMBIO DE PASTA TÉRMICA Y THERMAL PADS MSI GTX 1080</h3>
+            <div class="video-rarity">RARITY: EPIC</div>
+            <p>MANTENIMIENTO REALIZADO A MSI GTX 1080 TI X8</p>
+          </div>
+        </div>
+
+        <div class="video-wrap">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/PXw2DPgLBZw" allowfullscreen
+              referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+          <div class="video-meta">
+            <h3>PROXIMAMENTE NUEVO VIDEO</h3>
+            <div class="video-rarity">RARITY: LEGENDARY</div>
+            <p>Próximamente</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- CONTACTO -->
+    <section id="contact" class="reveal">
+      <h2 class="section-title">contact</h2>
+      <div class="contact-grid">
+
+        <div>
+          <p style="color:var(--text-muted); font-size:.88rem; margin-bottom:24px; line-height:1.8;">
+            Si compartes interés por la tecnología, el soporte técnico, el desarrollo web o simplemente te gusta hablar
+            de cómo funcionan las cosas, estaré encantado de conectar.
+          </p>
+          <div class="contact-links">
+            <a href="https://github.com/RicardoRdrgz" class="contact-link" target="_blank">
+              <div class="c-icon">gh</div>
+              <div><span class="c-label">GITHUB</span><span class="c-val">github.com/RicardoRdrgz</span></div>
+            </a>
+            <a href="https://www.linkedin.com/in/cristian-ricardo-rodriguez-arias-26804134b/" class="contact-link"
+              target="_blank">
+              <div class="c-icon">in</div>
+              <div><span class="c-label">LINKEDIN</span><span class="c-val">linkedin.com/in/RicardoRodriguez</span>
+              </div>
+            </a>
+            <a href="mailto:christianrodriguezarias@gmail.com" class="contact-link">
+              <div class="c-icon">@</div>
+              <div><span class="c-label">EMAIL</span><span class="c-val">christianrodriguezarias@gmail.com</span></div>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-right">
+          <div class="open-badge">
+            <span class="status-dot"></span>
+            OPEN TO WORK — DISPONIBLE
+          </div>
+          <p class="contact-note">Buscando prácticas o trabajo en<br>desarrollo web y soporte técnico IT en el área de
+            Barcelona o remoto.</p>
+          <div style="font-size:.72rem; color:var(--text-muted); margin-top:12px; letter-spacing:2px;">
+            R_Rodriguez // De Andalucía al mundo entero: soluciones creativas desarrolladas desde Sitges.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div><!-- /container -->
+
+  <footer>
+    <div class="footer-links">
+      <a href="#" id="btn-privacidad">Política de Privacidad</a>
+      <span style="color:var(--text-muted)">—</span>
+      <a href="#" id="btn-legal">Aviso Legal</a>
+    </div>
+    <div class="copyright">&copy; 2026 Ricardo Rodriguez. Todos los derechos reservados.</div>
+  </footer>
+
+  <div id="modal-privacidad" class="m-overlay" role="dialog" aria-modal="true" aria-labelledby="privacidad-title">
+    <div class="m-box">
+      <button class="m-close" data-close="modal-privacidad" aria-label="Cerrar">✕</button>
+      <div class="m-inner">
+        <span class="m-label">DOCUMENTO LEGAL</span>
+        <h2 class="m-title" id="privacidad-title">Política de Privacidad</h2>
+        <span class="m-date">Última actualización: junio de 2026</span>
+        <span class="m-section">01. Responsable</span>
+        <p>Ricardo Rodriguez · <a href="mailto:christianrodriguezarias@gmail.com">christianrodriguezarias@gmail.com</a>
+          · Sitges, Barcelona, España.</p>
+        <span class="m-section">02. Datos que se recopilan</span>
+        <p>Este sitio es estático. No dispone de formularios ni recoge datos personales de forma directa. Si contactas
+          por email, tus datos se usan solo para responder tu consulta.</p>
+        <span class="m-section">03. Servicios de terceros</span>
+        <p><strong>Google Fonts</strong> — tu IP puede ser procesada por Google LLC.</p>
+        <p><strong>YouTube (sin cookies)</strong> — vídeos desde youtube-nocookie.com.</p>
+        <p><strong>GitHub Pages</strong> — puede registrar IPs con fines de seguridad.</p>
+        <span class="m-section">04. Cookies</span>
+        <p>Este sitio no instala cookies propias. Los terceros mencionados pueden instalar las suyas.</p>
+        <span class="m-section">05. Tus derechos (RGPD)</span>
+        <p>Puedes acceder, rectificar o suprimir tus datos en <a
+            href="mailto:christianrodriguezarias@gmail.com">christianrodriguezarias@gmail.com</a> o reclamar ante la <a
+            href="https://www.aepd.es" target="_blank" rel="noopener">AEPD</a>.</p>
+      </div>
+      <div class="m-foot">
+        <button class="m-btn" data-close="modal-privacidad">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-legal" class="m-overlay" role="dialog" aria-modal="true" aria-labelledby="legal-title">
+    <div class="m-box">
+      <button class="m-close" data-close="modal-legal" aria-label="Cerrar">✕</button>
+      <div class="m-inner">
+        <span class="m-label">DOCUMENTO LEGAL</span>
+        <h2 class="m-title" id="legal-title">Aviso Legal</h2>
+        <span class="m-date">Última actualización: junio de 2026</span>
+        <span class="m-section">01. Titular del sitio</span>
+        <p><strong>Ricardo Rodriguez</strong> · Sitges, Barcelona · <a
+            href="mailto:christianrodriguezarias@gmail.com">christianrodriguezarias@gmail.com</a></p>
+        <span class="m-section">02. Condiciones de uso</span>
+        <p>Sitio de carácter informativo y profesional. El acceso es libre y gratuito. El usuario se compromete a un uso
+          lícito respetando la legislación vigente.</p>
+        <span class="m-section">03. Propiedad intelectual</span>
+        <p>Todos los contenidos — textos, diseño, código e imágenes — son propiedad de Ricardo Rodriguez. Queda
+          <strong>expresamente prohibida</strong> su reproducción sin autorización por escrito. La ausencia de licencia
+          en el repositorio implica todos los derechos reservados.</p>
+        <span class="m-section">04. Limitación de responsabilidad</span>
+        <p>El titular no garantiza la disponibilidad continua del sitio ni se responsabiliza del contenido de sitios de
+          terceros enlazados.</p>
+        <span class="m-section">05. Legislación aplicable</span>
+        <p>Legislación española. Cualquier controversia se somete a los juzgados y tribunales de
+          <strong>Barcelona</strong>.</p>
+      </div>
+      <div class="m-foot">
+        <button class="m-btn" data-close="modal-legal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.min.js"></script>
+
+</body>
+
+</html>
