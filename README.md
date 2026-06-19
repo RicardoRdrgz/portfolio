@@ -7,7 +7,6 @@
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![License: MIT](https://img.shields.io/badge/License-MIT-orange.svg)](./LICENSE)
 [![Status](https://img.shields.io/badge/status-online-4ade80?style=flat)]()
 
 ---
@@ -16,7 +15,7 @@
 
 Portfolio personal desarrollado íntegramente con **HTML5, CSS3 y JavaScript Vanilla** — sin frameworks, sin dependencias externas de runtime. Diseño oscuro con estética **terminal / RPG**, animaciones CSS puras y arquitectura de una sola página (SPA-like con smooth scroll).
 
-🌐 **Live demo:** [ricardordrgz.github.io/Portfolio](https://ricardordrgz.github.io/Portfolio)
+🌐 **Live demo:** [ricardordrgz.github.io/Portfolio](https://ricardordrgz.github.io/portfolio)
 
 ---
 
